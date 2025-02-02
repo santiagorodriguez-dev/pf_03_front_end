@@ -1,0 +1,12 @@
+cookie:
+  expiry_days: 30
+  key: void # Must be a string
+  name: void
+credentials:
+  usernames:
+    santi:
+      email: void
+      failed_login_attempts: 0 # Will be managed automatically
+      logged_in: False # Will be managed automatically
+      name: void
+      password: void # Will be hashed automatically
