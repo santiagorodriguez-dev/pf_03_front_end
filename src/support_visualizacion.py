@@ -85,33 +85,40 @@ def visualiazar_datos_leads(st):
     sns.set_style("whitegrid")
 
     # Crear figura y ejes para subplots
-    fig, axes = plt.subplots(2, 2, figsize=(15, 10))  # 4 filas, 2 columnas
-    fig.suptitle("Análisis del Score en potenciales clientes", fontsize=18)  # Título principal
+    fig, axes = plt.subplots(1, 2, figsize=(15, 5))  # 4 filas, 2 columnas
 
     # Gráfico 1: Score por nivel de estudios
-    sns.barplot(x=df["estudios"], y=df["score"], ax=axes[0, 0], palette="viridis")
-    axes[0, 0].set_title("Score en Función de la Educación")
-    axes[0, 0].set_xlabel("")
-    axes[0, 0].tick_params(axis='x', rotation=30)  # 🔹 Rotar etiquetas del eje X
-    axes[0, 0].set_ylabel("Score")
+    sns.barplot(x=df["estudios"], y=df["score"], ax=axes[0], palette="viridis")
+    axes[0].set_title("Score en Función de la Educación")
+    axes[0].set_xlabel("")
+    axes[0].tick_params(axis='x', rotation=30)  # 🔹 Rotar etiquetas del eje X
+    axes[0].set_ylabel("Score")
 
     # Gráfico 2: Score por especialidad
-    sns.barplot(x=df["especialidad"], y=df["score"], ax=axes[0, 1], palette="viridis")
-    axes[0, 1].set_title("Score en Función de la Especialidad")
-    axes[0, 1].set_xlabel("Especialidad")
-    axes[0, 1].set_ylabel("Score")
+    sns.barplot(x=df["especialidad"], y=df["score"], ax=axes[1], palette="viridis")
+    axes[1].set_title("Score en Función de la Especialidad")
+    axes[1].set_xlabel("Especialidad")
+    axes[1].set_ylabel("Score")
+
+    # Ajustar diseño para evitar solapamientos
+    plt.tight_layout(rect=[0, 0, 1, 0.96])  # Ajuste para dejar espacio al título
+  
+    st.pyplot(fig)
+
+        # Crear figura y ejes para subplots
+    fig, axes = plt.subplots(1, 2, figsize=(15, 5))  # 4 filas, 2 columnas
 
     # Gráfico 4: Score en función de la edad (barplot)
-    sns.barplot(x=df["edad"], y=df["score"], ax=axes[1, 0], palette="viridis")
-    axes[1, 0].set_title("Score en Función de la Edad")
-    axes[1, 0].set_xlabel("Edad")
-    axes[1, 0].set_ylabel("Score")
+    sns.barplot(x=df["edad"], y=df["score"], ax=axes[0], palette="viridis")
+    axes[0].set_title("Score en Función de la Edad")
+    axes[0].set_xlabel("Edad")
+    axes[0].set_ylabel("Score")
 
     top_motivos = df.groupby("motivo_compra")["score"].median().nlargest(5)  # Agrupar por motivo y obtener top 10
-    sns.barplot(y=top_motivos.index, x=top_motivos.values, ax=axes[1, 1], palette="viridis")
-    axes[1, 1].set_title("Top 5 Motivos de Compra con Mayor Score")
-    axes[1, 1].set_xlabel("Score Total")
-    axes[1, 1].set_ylabel("Motivo de Compra")
+    sns.barplot(y=top_motivos.index, x=top_motivos.values, ax=axes[1], palette="viridis")
+    axes[1].set_title("Top 5 Motivos de Compra con Mayor Score")
+    axes[1].set_xlabel("Score Total")
+    axes[1].set_ylabel("Motivo de Compra")
 
     # Ajustar diseño para evitar solapamientos
     plt.tight_layout(rect=[0, 0, 1, 0.96])  # Ajuste para dejar espacio al título
