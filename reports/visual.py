@@ -7,7 +7,8 @@ from src import support_visualizacion as spv
 
 from src import support_bd as bd
 
-st.title('Analisis Potenciales Leads')
+st.header("Analisis Potenciales Leads", divider=True)
+
 df = bd.select_datos("leads",st)
 df['score'] = df['score'].astype(float)
 st.dataframe(df)

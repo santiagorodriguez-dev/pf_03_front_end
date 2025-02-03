@@ -1,3 +1,3 @@
 import streamlit as st # type: ignore
 
-st.title("Asistente de Resumen")
+st.header("Asistente de Resumen", divider=True)

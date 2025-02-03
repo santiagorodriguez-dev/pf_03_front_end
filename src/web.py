@@ -17,10 +17,10 @@ def load_web(st,authenticator):
     logout_page = st.Page(logout, title="Usuario", icon=":material/logout:")
 
     dashboard = st.Page(
-        "reports/visual.py", title="Analisis Leads", icon=":material/dashboard:", default=True
+        "reports/visual.py", title="Analisis Leads", icon=":material/dashboard:"
     )
 
-    ventas = st.Page("tools/asistente_ventas.py", title="Asistente Venta", icon=":material/history:")
+    ventas = st.Page("tools/asistente_ventas.py", title="Asistente Venta", icon=":material/history:" , default=True)
     resumen = st.Page("tools/asistente_resumen.py", title="Asistente Resumen", icon=":material/history:")
 
     if st.session_state.logged_in:
