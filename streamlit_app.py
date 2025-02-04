@@ -15,10 +15,10 @@ with open('config.yaml') as file:
 
 
 st.set_page_config(
-        page_title="Asistente de ventas",
-        page_icon="🧊",
+        page_title="Asistente",
+        page_icon=":sunny:",
         layout="wide",
-        initial_sidebar_state="collapsed",
+        initial_sidebar_state="auto",
 )
 
 config['credentials'] = st.secrets["credentials"].to_dict()
