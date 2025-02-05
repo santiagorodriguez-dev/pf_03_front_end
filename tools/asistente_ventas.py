@@ -6,7 +6,7 @@ from src import support_open_ai as sp
 
 # Título de la aplicación
 st.markdown("### Asistente de Ventas (Modelo Curso Full Stack)")
-separador = '********************************************************************************************************'
+separador = '****************************************************************************************************'
 
 # Inicializar session_state si no existe
 if "historial_ventas" not in st.session_state:
