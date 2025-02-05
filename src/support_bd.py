@@ -42,6 +42,7 @@ def select_datos(name_bd, st):
     response_select = supabase.table(name_bd).select("*").order("score", desc=True).execute()
     datos_select = pd.DataFrame(response_select.data).reset_index(drop=True)
     datos_select = datos_select.drop('index', axis=1)
-    return datos_select
+    datos_select['score'] = datos_select['score'].astype(float)
+    return datos_select.sort_values("score", ascending=False)
  
 
