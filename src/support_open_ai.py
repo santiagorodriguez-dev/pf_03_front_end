@@ -74,6 +74,8 @@ def process_data(openai_client, assistant_id, thread_id, message):
         run_id=run.id
     )
 
+    st.write(f"Asistente id: {assistant_id}")
+
     while True:
         run_status = openai_client.beta.threads.runs.retrieve(
             thread_id=thread_id,
@@ -86,7 +88,7 @@ def process_data(openai_client, assistant_id, thread_id, message):
             print("petó.")
             break
         else:
-            print(f"Esperando a que se complete...{run.id}")
+            st.write(f"Esperando a que se complete...{run.id}")
             time.sleep(3)
 
     print(f"Thread ID: {thread_id}")
@@ -101,9 +103,9 @@ def process_data(openai_client, assistant_id, thread_id, message):
             break
 
     if assistant_response:
-        print(f"respuesta procesada del asistente.")
+        st.write(f"respuesta procesada del asistente.")
     else:
-        print("No se encontró una respuesta del asistente.")
+        st.write("No se encontró una respuesta del asistente.")
 
     return assistant_response
 
