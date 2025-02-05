@@ -19,7 +19,7 @@ if 'button_resumen' not in st.session_state:
 def click_button_send():
     st.session_state.button_resumen = not st.session_state.button_resumen
 
-st.text_area("", value="\n".join(st.session_state.historial_conversacion), height=350, disabled=True)
+st.text_area("Historial", value="\n".join(st.session_state.historial_conversacion), height=350, disabled=True)
 
 # Entrada de texto con clave dinámica
 user_input = st.text_input("Introduce la conversacion para proceder al analisis:", key=f"user_input_{st.session_state.input_key_resumen}")

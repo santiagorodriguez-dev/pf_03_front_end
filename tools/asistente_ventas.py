@@ -19,7 +19,7 @@ if 'button_ventas' not in st.session_state:
 def click_button_send():
     st.session_state.button_ventas = not st.session_state.button_ventas
 
-st.text_area("", value="\n".join(st.session_state.historial_ventas), height=350, disabled=True)
+st.text_area("Historial", value="\n".join(st.session_state.historial_ventas), height=350, disabled=True)
 
 # Entrada de texto con clave dinámica
 user_input = st.text_input("Introduce una consulta:", key=f"user_input_{st.session_state.input_key}")
