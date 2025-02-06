@@ -30,20 +30,12 @@ Este proyecto es una aplicación desarrollada en Python que utiliza Streamlit pa
 
 ## Configuración del entorno de desarrollo
 
-Este proyecto está configurado para utilizar un entorno de desarrollo en contenedores mediante DevContainer. Siga los siguientes pasos para configurar su entorno:
-
-1. **Instalar Visual Studio Code (VSCode)**: Si aún no lo tiene, descárguelo e instálelo desde [code.visualstudio.com](https://code.visualstudio.com/).
-
-2. **Instalar la extensión Remote - Containers**: En VSCode, vaya a la sección de extensiones y busque `Remote - Containers`. Instale la extensión proporcionada por Microsoft.
-
-3. **Clonar el repositorio**:
+1. **Clonar el repositorio**:
    ```bash
    git clone https://github.com/santiagorodriguez-dev/pf_03_front_end.git
    cd pf_03_front_end
    ```
 ## Instalación de dependencias
-
-Si prefiere no utilizar el entorno de desarrollo en contenedores, puede configurar el entorno manualmente:
 
 1. **Crear un entorno virtual**:
    ```bash
