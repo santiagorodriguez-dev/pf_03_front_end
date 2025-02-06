@@ -28,10 +28,6 @@ Este proyecto es una aplicación desarrollada en Python que utiliza Streamlit pa
 - **Streamlit**: Streamlit open-source Python framework
 - **plotly.express**: Plotly Express es una API consistente y de alto nivel para crear figuras.
 
-## Requisitos previos
-
-- **Docker**: Asegúrese de tener Docker instalado en su sistema. Puede descargarlo desde [docker.com](https://www.docker.com/).
-
 ## Configuración del entorno de desarrollo
 
 Este proyecto está configurado para utilizar un entorno de desarrollo en contenedores mediante DevContainer. Siga los siguientes pasos para configurar su entorno:
