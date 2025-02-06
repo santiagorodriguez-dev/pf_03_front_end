@@ -1,18 +1,3 @@
-import streamlit as st # type: ignore
-import streamlit_authenticator as stauth # type: ignore
-
-import yaml
-from yaml.loader import SafeLoader
-
-import sys
-sys.path.append("../")
-
-from src import support_bd as bd
-from src import web as w
-
-with open('config.yaml') as file:
-    config = yaml.load(file, Loader=SafeLoader)
-
 """
 Módulo de autenticación y carga de la aplicación en Streamlit.
 
@@ -52,6 +37,21 @@ Notas:
 - La autenticación se gestiona mediante cookies, lo que permite sesiones persistentes.
 - Se recomienda almacenar credenciales de manera segura en `st.secrets`.
 """
+
+import streamlit as st # type: ignore
+import streamlit_authenticator as stauth # type: ignore
+
+import yaml
+from yaml.loader import SafeLoader
+
+import sys
+sys.path.append("../")
+
+from src import support_bd as bd
+from src import web as w
+
+with open('config.yaml') as file:
+    config = yaml.load(file, Loader=SafeLoader)
 
 st.set_page_config(
         page_title="Asistente",
