@@ -1,5 +1,4 @@
-
-# Aplicacion web asistente de ventas
+# 3 - Agente asistente de ventas - Aplicacion web
 
 Este proyecto es una aplicación desarrollada en Python que utiliza Streamlit para la creación de interfaces de usuario interactivas. Está diseñado para ser ejecutado en un entorno de streamlit cloud, facilitando su configuración y despliegue.
 
