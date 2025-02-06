@@ -1,6 +1,25 @@
 
 
-def load_web(st,authenticator):
+def load_web(st, authenticator):
+    """
+    Configura la navegación y autenticación en la aplicación web.
+
+    Parámetros:
+    - st: Módulo de Streamlit para la visualización interactiva.
+    - authenticator: Manejador de autenticación para gestionar el inicio y cierre de sesión.
+
+    Funcionalidad:
+    1. Comprueba el estado de autenticación del usuario y actualiza la variable de sesión `logged_in`.
+    2. Define una función interna `logout()` para manejar el cierre de sesión.
+    3. Crea y configura las páginas de navegación:
+        - "Usuario" para el cierre de sesión.
+        - "Analisis Leads" para visualizar reportes de leads.
+        - "Asistente Venta" como asistente de ventas (página predeterminada).
+        - "Asistente Resumen" para generar resúmenes.
+    4. Muestra la navegación solo si el usuario está autenticado.
+
+    La función utiliza `st.navigation` para definir la estructura del menú y ejecutar la página seleccionada.
+    """
     if st.session_state.authentication_status:
         st.session_state.logged_in = True
 

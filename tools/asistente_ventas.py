@@ -4,6 +4,43 @@ import sys
 sys.path.append("../")
 from src import support_open_ai as sp 
 
+"""
+Módulo para un asistente de ventas basado en un modelo de IA, implementado en Streamlit.
+
+Funcionalidad:
+- Muestra un historial de interacción con el asistente de ventas.
+- Permite al usuario realizar consultas sobre ventas y recibir respuestas generadas por OpenAI.
+- Utiliza OpenAI para procesar la consulta y generar una respuesta relevante.
+- Opción para borrar el historial de conversación.
+
+Dependencias:
+- Streamlit (`st`)
+- Módulo `support_open_ai` (`sp`) para la integración con OpenAI.
+
+Variables de estado (`st.session_state`):
+- `historial_ventas`: Lista que almacena las interacciones entre el usuario y el asistente.
+- `input_key`: Clave dinámica para actualizar el campo de entrada y limpiarlo tras el envío.
+- `button_ventas`: Controla el estado del botón "Enviar" para evitar múltiples envíos simultáneos.
+
+Funciones:
+- `click_button_send()`: Alterna el estado de `button_ventas` para controlar el botón de envío.
+
+Flujo:
+1. Se muestra el historial de conversación en un área de texto deshabilitada.
+2. Se recibe la entrada del usuario a través de un campo de texto.
+3. Al hacer clic en "Enviar":
+   - Se procesa la entrada con OpenAI.
+   - Se guarda la respuesta en el historial.
+   - Se actualiza la clave del input para limpiar el campo.
+   - Se refresca la aplicación con `st.rerun()`.
+4. Un botón "Borrar" permite limpiar el historial de la conversación.
+
+Notas:
+- Evita enviar entradas vacías.
+- Usa `st.secrets` para manejar credenciales de OpenAI de forma segura.
+"""
+
+
 # Título de la aplicación
 st.markdown("### Asistente de Ventas (Modelo Curso Full Stack)")
 separador = '****************************************************************************************************'

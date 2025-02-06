@@ -16,10 +16,15 @@ def visualizar_datos_all_leads(st, df):
     """
     Genera visualizaciones interactivas para analizar los datos de los leads y sus scores.
 
-    - Score en función del nivel de estudios.
-    - Score en función de la especialidad.
-    - Score en función de la edad.
-    - Top 5 motivos de compra con mayor score.
+    Parámetros:
+    - st: módulo de Streamlit para la visualización interactiva.
+    - df: DataFrame de pandas con los datos de los leads.
+
+    Visualizaciones:
+    1. Score en función del nivel de estudios.
+    2. Score en función de la especialidad.
+    3. Score en función de la edad.
+    4. Top 5 motivos de compra con mayor score.
 
     Se utilizan gráficos de Plotly Express para una mejor interactividad.
     """
@@ -77,6 +82,23 @@ def visualizar_datos_all_leads(st, df):
     st.plotly_chart(fig_motivos)
 
 def visualizar_datos_top_leads(st, df):
+    """
+    Genera un dashboard con KPIs y visualizaciones para analizar el top 10% de los leads con mayor score.
+
+    Parámetros:
+    - st: módulo de Streamlit para la visualización interactiva.
+    - df: DataFrame de pandas con los datos de los leads.
+
+    Métricas y visualizaciones incluidas:
+    1. Edad promedio y score promedio del top 10%.
+    2. Distribución del nivel de estudios.
+    3. Especialidad más frecuente.
+    4. Distribución de género.
+    5. Mapa con las ciudades con más usuarios del top 10%.
+    6. Tabla con los datos del top 10% de scores.
+
+    Se emplean gráficos de barras, gráficos de pastel y mapas interactivos usando Plotly.
+    """
     # Filtrar el top 10% de scores
     umbral_score = df["score"].quantile(0.90)
     df_top_score = df[df["score"] >= umbral_score]
