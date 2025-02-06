@@ -4,43 +4,41 @@ import sys
 sys.path.append("../")
 from src import support_open_ai as sp
 
-"""
-Módulo para un asistente de feedback basado en un modelo de resumen de conversaciones telefónicas,
-implementado en Streamlit.
 
-Funcionalidad:
-- Muestra un historial de conversación con respuestas generadas por un asistente de IA.
-- Permite al usuario ingresar una conversación para su análisis y obtener un resumen.
-- Utiliza OpenAI para procesar la conversación y generar respuestas.
-- Permite borrar el historial de conversación.
+# Módulo para un asistente de feedback basado en un modelo de resumen de conversaciones telefónicas,
+# implementado en Streamlit.
 
-Dependencias:
-- Streamlit (`st`)
-- Módulo `support_open_ai` (`sp`) para la integración con OpenAI.
+# Funcionalidad:
+# - Muestra un historial de conversación con respuestas generadas por un asistente de IA.
+# - Permite al usuario ingresar una conversación para su análisis y obtener un resumen.
+# - Utiliza OpenAI para procesar la conversación y generar respuestas.
+# - Permite borrar el historial de conversación.
 
-Variables de estado (`st.session_state`):
-- `historial_conversacion`: Lista que almacena las interacciones entre el usuario y el asistente.
-- `input_key_resumen`: Clave dinámica para actualizar el campo de entrada y limpiarlo tras el envío.
-- `button_resumen`: Controla el estado del botón "Enviar" para evitar múltiples envíos simultáneos.
+# Dependencias:
+# - Streamlit (`st`)
+# - Módulo `support_open_ai` (`sp`) para la integración con OpenAI.
 
-Funciones:
-- `click_button_send()`: Alterna el estado de `button_resumen` para controlar el botón de envío.
+# Variables de estado (`st.session_state`):
+# - `historial_conversacion`: Lista que almacena las interacciones entre el usuario y el asistente.
+# - `input_key_resumen`: Clave dinámica para actualizar el campo de entrada y limpiarlo tras el envío.
+# - `button_resumen`: Controla el estado del botón "Enviar" para evitar múltiples envíos simultáneos.
 
-Flujo:
-1. Se muestra el historial de conversación en un área de texto deshabilitada.
-2. Se recibe la entrada del usuario a través de un campo de texto.
-3. Al hacer clic en "Enviar":
-   - Se procesa la entrada con OpenAI.
-   - Se guarda la respuesta en el historial.
-   - Se actualiza la clave del input para limpiar el campo.
-   - Se refresca la aplicación con `st.rerun()`.
-4. Un botón "Borrar" permite limpiar el historial de la conversación.
+# Funciones:
+# - `click_button_send()`: Alterna el estado de `button_resumen` para controlar el botón de envío.
 
-Notas:
-- Evita enviar entradas vacías.
-- Usa `st.secrets` para manejar credenciales de OpenAI de forma segura.
-"""
+# Flujo:
+# 1. Se muestra el historial de conversación en un área de texto deshabilitada.
+# 2. Se recibe la entrada del usuario a través de un campo de texto.
+# 3. Al hacer clic en "Enviar":
+#    - Se procesa la entrada con OpenAI.
+#    - Se guarda la respuesta en el historial.
+#    - Se actualiza la clave del input para limpiar el campo.
+#    - Se refresca la aplicación con `st.rerun()`.
+# 4. Un botón "Borrar" permite limpiar el historial de la conversación.
 
+# Notas:
+# - Evita enviar entradas vacías.
+# - Usa `st.secrets` para manejar credenciales de OpenAI de forma segura.
 
 # Título de la aplicación
 st.markdown("### Asistente Feedback (Modelo Resumen conversacion telefónica)")
