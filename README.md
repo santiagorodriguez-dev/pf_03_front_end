@@ -80,8 +80,6 @@ Para ejecutar la aplicación Streamlit:
    streamlit run streamlit_app.py
    ```
 
-3. **Acceda a la aplicación**: Abra su navegador web y navegue a `http://localhost:8501` para interactuar con la aplicación.
-
 ## Configuración
 
 La aplicación utiliza un archivo de configuración `config.yaml` ubicado en la raíz del proyecto. Asegúrese de revisar y modificar este archivo según sus necesidades antes de ejecutar la aplicación.
