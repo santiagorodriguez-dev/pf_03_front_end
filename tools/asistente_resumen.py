@@ -67,8 +67,13 @@ assis_venta = sp.get_assistant(openai_client, id_asis)
 
 if st.button("Enviar" , on_click=click_button_send, disabled=st.session_state.button_resumen):
         if user_input.strip():  # Evita entradas vacías
-            thread = sp.create_thread(openai_client)
-            respuesta = sp.process_data(openai_client, assis_venta.id, thread.id, user_input)
+            try:
+                thread = sp.create_thread(openai_client)
+                st.write(f"Hilo Creado...{thread.id}")
+                respuesta = sp.process_data(openai_client, assis_venta.id, thread.id, user_input)
+            except:
+                 respuesta = 'No se ha podido procesar la respuesta, intentalo de nuevo.'
+
             st.session_state.historial_conversacion.append(f"{st.session_state["name"]}: {user_input}"  + '\n' + separador + '\n' + 'Asistente: '+ respuesta + '\n' + separador)
             st.session_state.input_key_resumen += 1  # Cambiar clave para limpiar input
             st.session_state.button_resumen = False
