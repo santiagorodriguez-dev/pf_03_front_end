@@ -39,7 +39,7 @@ def load_web(st, authenticator):
         "reports/visual.py", title="Analisis Leads", icon=":material/dashboard:"
     )
 
-    ventas = st.Page("tools/asistente_ventas.py", title="Asistente Venta", icon=":material/robot_2:" , default=True)
+    ventas = st.Page("tools/asistente_ventas.py", title="Asistente Venta", icon=":material/robot_2:")
     resumen = st.Page("tools/asistente_resumen.py", title="Asistente Resumen", icon=":material/smart_toy:")
 
     if st.session_state.logged_in:
